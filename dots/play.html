@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">-->
+  <link rel="stylesheet" href="dots.css">
+  
+  <style>
+    .midit{
+      padding-left:30%;
+    }
+  </style>
+  
+</head>
+<body onLoad="dots_ini()">
+  <div class="container">
+    <br>
+    
+    
+    
+    <div class="midit">
+      <form name="f">
+        <div class="row lefty">
+          <div class="col-md-12">
+            <input type=radio name="x1" onclick="convert(1);">
+            <img name='i0' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x2" onclick="convert(2);">
+            <img name='i1' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x3" onclick="convert(3);">
+            <img name='i2' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x4" onclick="convert(4);">
+            <img name='i3' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x5" onclick="convert(5);">
+            <img name='i4' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x6" onclick="convert(6);">
+            <img name='i5' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x7" onclick="convert(7);">
+            <img name='i6' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x8" onclick="convert(8);">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <img name='i7' class="vert-stick-1" width=5 height=30>
+            <img name='i8' class="first" width=30 height=30>
+            <img name='i9' class="vert-stick-2" width=5 height=30>
+            <img name='i10' class="second" width=30 height=30>
+            <img name='i11' class="vert-stick-3" width=5 height=30>
+            <img name='i12' class="third" width=30 height=30>
+            <img name='i13' class="vert-stick-4" width=5 height=30>
+            <img name='i14' class="fourth" width=30 height=30>
+            <img name='i15' class="vert-stick-5" width=5 height=30>
+            <img name='i16' class="fifth" width=30 height=30>
+            <img name='i17' class="vert-stick-6" width=5 height=30>
+            <img name='i18' class="sixth" width=30 height=30>
+            <img name='i19' class="vert-stick-7" width=5 height=30>
+            <img name='i20' class="seventh" width=30 height=30>
+            <img name='i21' class="vert-stick-8" width=5 height=30>
+          </div>
+        </div>
+        <div class="row up-one lefty">
+          <div class="col-md-12">
+            <input type=radio name="x9" onclick="convert(9);">
+            <img name='i22' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x10" onclick="convert(10);">
+            <img name='i23' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x11" onclick="convert(11);">
+            <img name='i24' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x12" onclick="convert(12);">
+            <img name='i25' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x13" onclick="convert(13);">
+            <img name='i26' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x14" onclick="convert(14);">
+            <img name='i27' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x15" onclick="convert(15);">
+            <img name='i28' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x16" onclick="convert(16);">
+          </div>
+        </div>
+        <div class="row up-one">
+          <div class="col-md-12">
+            <img name='i29' class="vert-stick-1" width=5 height=30>
+            <img name='i30' class="first" width=30 height=30>
+            <img name='i31' class="vert-stick-2" width=5 height=30>
+            <img name='i32' class="second" width=30 height=30>
+            <img name='i33' class="vert-stick-3" width=5 height=30>
+            <img name='i34' class="third" width=30 height=30>
+            <img name='i35' class="vert-stick-4" width=5 height=30>
+            <img name='i36' class="fourth" width=30 height=30>
+            <img name='i37' class="vert-stick-5" width=5 height=30>
+            <img name='i38' class="fifth" width=30 height=30>
+            <img name='i39' class="vert-stick-6" width=5 height=30>
+            <img name='i40' class="sixth" width=30 height=30>
+            <img name='i41' class="vert-stick-7" width=5 height=30>
+            <img name='i42' class="seventh" width=30 height=30>
+            <img name='i43' class="vert-stick-8" width=5 height=30>
+          </div>
+        </div>
+        <div class="row up-two lefty">
+          <div class="col-md-12">
+            <input type=radio name="x17" onclick="convert(17);">
+            <img name='i44' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x18" onclick="convert(18);">
+            <img name='i45' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x19" onclick="convert(19);">
+            <img name='i46' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x20" onclick="convert(20);">
+            <img name='i47' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x21" onclick="convert(21);">
+            <img name='i48' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x22" onclick="convert(22);">
+            <img name='i49' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x23" onclick="convert(23);">
+            <img name='i50' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x24" onclick="convert(24);">
+          </div>
+        </div>
+        <div class="row up-two">
+          <div class="col-md-12">
+            <img name='i51' class="vert-stick-1" width=5 height=30>
+            <img name='i52' class="first" width=30 height=30>
+            <img name='i53' class="vert-stick-2" width=5 height=30>
+            <img name='i54' class="second" width=30 height=30>
+            <img name='i55' class="vert-stick-3" width=5 height=30>
+            <img name='i56' class="third" width=30 height=30>
+            <img name='i57' class="vert-stick-4" width=5 height=30>
+            <img name='i58' class="fourth" width=30 height=30>
+            <img name='i59' class="vert-stick-5" width=5 height=30>
+            <img name='i60' class="fifth" width=30 height=30>
+            <img name='i61' class="vert-stick-6" width=5 height=30>
+            <img name='i62' class="sixth" width=30 height=30>
+            <img name='i63' class="vert-stick-7" width=5 height=30>
+            <img name='i64' class="seventh" width=30 height=30>
+            <img name='i65' class="vert-stick-8" width=5 height=30>
+          </div>
+        </div>
+        <div class="row up-three lefty">
+          <div class="col-md-12">
+            <input type=radio name="x25" onclick="convert(25);">
+            <img name='i66' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x26" onclick="convert(26);">
+            <img name='i67' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x27" onclick="convert(27);">
+            <img name='i68' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x28" onclick="convert(28);">
+            <img name='i69' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x29" onclick="convert(29);">
+            <img name='i70' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x30" onclick="convert(30);">
+            <img name='i71' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x31" onclick="convert(31);">
+            <img name='i72' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x32" onclick="convert(32);">
+          </div>
+        </div>
+        <div class="row up-three">
+          <div class="col-md-12">
+            <img name='i73' class="vert-stick-1" width=5 height=30>
+            <img name='i74' class="first" width=30 height=30>
+            <img name='i75' class="vert-stick-2" width=5 height=30>
+            <img name='i76' class="second" width=30 height=30>
+            <img name='i77' class="vert-stick-3" width=5 height=30>
+            <img name='i78' class="third" width=30 height=30>
+            <img name='i79' class="vert-stick-4" width=5 height=30>
+            <img name='i80' class="fourth" width=30 height=30>
+            <img name='i81' class="vert-stick-5" width=5 height=30>
+            <img name='i82' class="fifth" width=30 height=30>
+            <img name='i83' class="vert-stick-6" width=5 height=30>
+            <img name='i84' class="sixth" width=30 height=30>
+            <img name='i85' class="vert-stick-7" width=5 height=30>
+            <img name='i86' class="seventh" width=30 height=30>
+            <img name='i87' class="vert-stick-8" width=5 height=30>
+          </div>
+        </div>
+        <div class="row up-four lefty">
+          <div class="col-md-12">
+            <input type=radio name="x33" onclick="convert(33);">
+            <img name='i88' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x34" onclick="convert(34);">
+            <img name='i89' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x35" onclick="convert(35);">
+            <img name='i90' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x36" onclick="convert(36);">
+            <img name='i91' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x37" onclick="convert(37);">
+            <img name='i92' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x38" onclick="convert(38);">
+            <img name='i93' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x39" onclick="convert(39);">
+            <img name='i94' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x40" onclick="convert(40);">
+          </div>
+        </div>
+        <div class="row up-four">
+          <div class="col-md-12">
+            <img name='i95' class="vert-stick-1" width=5 height=30>
+            <img name='i96' class="first" width=30 height=30>
+            <img name='i97' class="vert-stick-2" width=5 height=30>
+            <img name='i98' class="second" width=30 height=30>
+            <img name='i99' class="vert-stick-3" width=5 height=30>
+            <img name='i100' class="third" width=30 height=30>
+            <img name='i101' class="vert-stick-4" width=5 height=30>
+            <img name='i102' class="fourth" width=30 height=30>
+            <img name='i103' class="vert-stick-5" width=5 height=30>
+            <img name='i104' class="fifth" width=30 height=30>
+            <img name='i105' class="vert-stick-6" width=5 height=30>
+            <img name='i106' class="sixth" width=30 height=30>
+            <img name='i107' class="vert-stick-7" width=5 height=30>
+            <img name='i108' class="seventh" width=30 height=30>
+            <img name='i109' class="vert-stick-8" width=5 height=30>
+          </div>
+        </div>
+        <div class="row up-five lefty">
+          <div class="col-md-12">
+            <input type=radio name="x41" onclick="convert(41);">
+            <img name='i110' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x42" onclick="convert(42);">
+            <img name='i111' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x43" onclick="convert(43);">
+            <img name='i112' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x44" onclick="convert(44);">
+            <img name='i113' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x45" onclick="convert(45);">
+            <img name='i114' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x46" onclick="convert(46);">
+            <img name='i115' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x47" onclick="convert(47);">
+            <img name='i116' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x48" onclick="convert(48);">
+          </div>
+        </div>
+        <div class="row up-five">
+          <div class="col-md-12">
+            <img name='i117' class="vert-stick-1" width=5 height=30>
+            <img name='i118' class="first" width=30 height=30>
+            <img name='i119' class="vert-stick-2" width=5 height=30>
+            <img name='i120' class="second" width=30 height=30>
+            <img name='i121' class="vert-stick-3" width=5 height=30>
+            <img name='i122' class="third" width=30 height=30>
+            <img name='i123' class="vert-stick-4" width=5 height=30>
+            <img name='i124' class="fourth" width=30 height=30>
+            <img name='i125' class="vert-stick-5" width=5 height=30>
+            <img name='i126' class="fifth" width=30 height=30>
+            <img name='i127' class="vert-stick-6" width=5 height=30>
+            <img name='i128' class="sixth" width=30 height=30>
+            <img name='i129' class="vert-stick-7" width=5 height=30>
+            <img name='i130' class="seventh" width=30 height=30>
+            <img name='i131' class="vert-stick-8" width=5 height=30>
+          </div>
+        </div>
+        <div class="row up-six lefty">
+          <div class="col-md-12">
+            <input type=radio name="x49" onclick="convert(49);">
+            <img name='i132' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x50" onclick="convert(50);">
+            <img name='i133' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x51" onclick="convert(51);">
+            <img name='i134' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x52" onclick="convert(52);">
+            <img name='i135' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x53" onclick="convert(53);">
+            <img name='i136' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x54" onclick="convert(54);">
+            <img name='i137' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x55" onclick="convert(55);">
+            <img name='i138' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x56" onclick="convert(56);">
+          </div>
+        </div>
+        <div class="row up-six">
+          <div class="col-md-12">
+            <img name='i139' class="vert-stick-1" width=5 height=30>
+            <img name='i140' class="first" width=30 height=30>
+            <img name='i141' class="vert-stick-2" width=5 height=30>
+            <img name='i142' class="second" width=30 height=30>
+            <img name='i143' class="vert-stick-3" width=5 height=30>
+            <img name='i144' class="third" width=30 height=30>
+            <img name='i145' class="vert-stick-4" width=5 height=30>
+            <img name='i146' class="fourth" width=30 height=30>
+            <img name='i147' class="vert-stick-5" width=5 height=30>
+            <img name='i148' class="fifth" width=30 height=30>
+            <img name='i149' class="vert-stick-6" width=5 height=30>
+            <img name='i150' class="sixth" width=30 height=30>
+            <img name='i151' class="vert-stick-7" width=5 height=30>
+            <img name='i152' class="seventh" width=30 height=30>
+            <img name='i153' class="vert-stick-8" width=5 height=30>
+          </div>
+        </div>
+        <div class="row up-seven lefty">
+          <div class="col-md-12">
+            <input type=radio name="x57" onclick="convert(57);">
+            <img name='i154' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x58" onclick="convert(58);">
+            <img name='i155' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x59" onclick="convert(59);">
+            <img name='i156' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x60" onclick="convert(60);">
+            <img name='i157' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x61" onclick="convert(61);">
+            <img name='i158' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x62" onclick="convert(62);">
+            <img name='i159' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x63" onclick="convert(63);">
+            <img name='i160' class="horiz-stick" width=30 height=5>
+            <input type=radio name="x64" onclick="convert(64);">
+          </div>
+        </div>
+        <br>
+        <div class="up-seven lefty">
+          <div class="row">
+            <div class="col-md-3">
+              <b>Computer:</b>
+              <input type=text name='comp' size=2 value=0 disabled>
+            </div>
+            <div class="col-md-3">
+              <b>Player:</b>
+              <input type=text name='plyr' size=2 value=0 disabled>
+            </div>
+            <div class="col-md-12">
+              <input class="btn btn-danger btn-lg" type=button value='Reset' onclick="window.location=window.location;">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    
+    
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>-->
+  <script src="dots.js"></script>
+</body>
+
+</html>
