@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
 </head>
-<body onload="randomNumber()">
+<body onload="grab_data()">
   <style>
     body {
       display: flex;
@@ -45,14 +44,14 @@
     <div class="container">
       <div class="row">
         <button class="btn black col s6" onclick="getLast()">back</button>
-        <button class="btn black col s6" onclick="randomNumber()">Next</button>
+        <button class="btn black col s6" onclick="grab_data()">Next</button>
       </div>
       <div class="row">
         <div class="col s6 offset-s3">
           <div class="card black">
             <div class="card-content">
               <center>
-                <img id="theone" src="https://media0.giphy.com/media/pVAMI8QYM42n6/giphy.gif" width="100%">
+                <img id="theone" src="https://media0.giphy.com/media/pVAMI8QYM42n6/giphy.gif" width="100%" alt="GIF">
               </center>
             </div>
           </div>
@@ -72,21 +71,39 @@
     </footer>
   </div>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <!--<script>
+  <script>
+    var result = "";
+    var theUrl = "https://tenor.googleapis.com/v2/search?q=letsride&key=AIzaSyChalPJDWQXpNOju9-u1EaVGlG-rvRl4IQ&client_key=tylerockss&limit=1&contentfilter=high&random=true&media_filter=gif";
     listOfGifs = [];
     setInterval(function() {
-      randomNumber();
-      $("#theone").load(location.href+" #theone>*","");
+      grab_data();
     }, 10000); // seconds to wait, miliseconds
-    function randomNumber() {
-      var randnum = Math.floor(Math.random() * 1440) + 90;
-      listOfGifs.push(randnum);
-      document.getElementById("theone").src = "http://replygif.net/i/" + randnum;
+
+    function callback(responsetext){
+      var response_objects = JSON.parse(responsetext);
+      var response = response_objects["results"];
+      result = response[0]["media_formats"]["gif"]["url"];
+      console.log(result);
+      document.getElementById("theone").setAttribute("src", result);
+      listOfGifs.push(result);
+    }
+
+    function grab_data() {
+
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.onreadystatechange = function () {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+          callback(xmlHttp.responseText);
+        }
+      }
+      xmlHttp.open("GET", theUrl, true);
+      xmlHttp.send(null);
     }
     function getLast(){
       console.log(listOfGifs);
-      document.getElementById("theone").src = "http://replygif.net/i/" + listOfGifs[listOfGifs.length - 2];
+      document.getElementById("theone").src = listOfGifs[listOfGifs.length - 2];
+      listOfGifs.pop();
     }
-  </script>-->
+  </script>
 </body>
 </html>
